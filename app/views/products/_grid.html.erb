@@ -1,0 +1,32 @@
+<%= grid(@products_grid) do |g|
+
+  g.column name: 'Name', attribute: 'name'
+
+  g.column name: 'Code', attribute: 'item_code'
+
+  g.column name: 'Description', attribute: 'description'
+
+  g.column name: 'Cost At Supplier(Yen)', attribute: 'cost_at_supplier'
+  g.column name: 'Exchange Rate', attribute: 'exchange_rate'
+  
+  g.column name: 'real price(Rs)', attribute: 'real_price'
+  g.column name: 'cost price(Rs)', attribute: 'cost_price'
+  g.column name: 'sale price(Rs)', attribute: 'sale_price'
+  
+  g.column name: 'Item total', attribute: 'quantity'
+  g.column name: 'Stock at Godown', attribute: 'quantity_godown'
+  g.column name: 'Stock at Shop', attribute: 'quantity_shop'
+  
+  g.column in_csv: false do |product|
+    link_to('Edit', edit_product_path(product))
+  end
+  g.column in_csv: false do |product|
+    link_to('Purchase', purchase_product_path(product))
+  end
+  g.column in_csv: false do |product|
+    link_to('To Shop', to_shop_product_path(product))
+  end
+  g.column in_csv: false do |product|
+    link_to('Sales', new_sale_path(product))
+  end
+end -%>

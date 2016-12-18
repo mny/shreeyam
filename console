@@ -1,0 +1,17 @@
+Script started on Sat May 10 16:52:44 2014
+[?1034hbash-3.2$ P[KSale.first
+bash: Sale.first: command not found
+bash-3.2$ Sale.first[K[K[K[K[K[Ks.first
+bash: Sales.first: command not found
+bash-3.2$ Sales.first[K[K[K[K[K[K[Ks
+bash: Sales: command not found
+bash-3.2$ Sales[K
+bash: Sale: command not found
+bash-3.2$ Sale
+bash: Sale: command not found
+bash-3.2$ Sale
+bash: Sale: command not found
+bash-3.2$ exit
+exit
+
+Script done on Sat May 10 16:53:31 2014

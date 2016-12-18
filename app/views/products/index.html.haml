@@ -1,0 +1,20 @@
+.container
+
+%h4 Product Entry
+= simple_form_for @product, :html => {:class => 'form-horizontal' } do |f|
+  = f.input :name, :required => true
+  = f.input :item_code, :required => true
+  = f.input :description
+  = f.input :cost_at_supplier
+  = f.input :exchange_rate
+  = f.input :variable_cost_percent
+  = f.input :sale_price
+  = f.input :quantity
+
+  .form-actions
+    = f.button :submit, 'Submit', :class=> "btn btn-primary"
+
+.row-fluid
+  .span12
+    = render partial:  'grid'
+

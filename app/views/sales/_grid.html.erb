@@ -1,0 +1,36 @@
+<%= grid(@sales_grid) do |g|
+
+  g.column name:  'Product Name', attribute: 'name',  model: 'Product' do |sale|
+    sale.product.name if sale.product
+  end
+
+  g.column name: 'Product Code', attribute: 'product_code'
+
+  g.column name: 'Description', attribute: 'description'
+
+  g.column name:  'Cost Price', attribute: 'cost_price',  model: 'Product' do |sale|
+    sale.product.cost_price if sale.product
+  end
+
+  g.column name:  'Selling Price', attribute: 'sale_price',  model: 'Product' do |sale|
+    sale.product.sale_price if sale.product
+  end
+
+  g.column name: 'Sold price(Rs)', attribute: 'sold_price'
+
+  g.column name: 'Profit(Rs)', attribute: 'profit'
+
+  g.column name:  'Quantity At Godown', attribute: 'name',  model: 'Product' do |sale|
+    sale.product.quantity_godown if sale.product
+  end
+
+  g.column name: 'Sold quatity', attribute: 'quantity'
+
+  g.column name:  'Quantity At Shop', attribute: 'name',  model: 'Product' do |sale|
+    (sale.product.quantity_shop -  sale.quantity) if sale.product
+  end
+  
+  g.column in_csv: false do |sale|
+    link_to('Edit', edit_sale_path(sale))
+  end
+end -%>
